@@ -1,0 +1,29 @@
+<!DOCTYPE html>>
+<html lang="en">
+    <head>
+        <title>0'Reilly Introduction to WebRTC</title>
+    </head>
+    <body>
+        <video autoplay></video>
+
+        <script>
+            navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+            var constarints = {audio: true, video: true};
+            var videoArea = document.querySelector("video");
+            navigator.getUserMedia(constarints, onSuccess, onError);
+
+            function onSuccess(stream) {
+                console.log("Success! We have a stream!");
+                // videoArea.src = window.URL.createObjectURL(stream);
+                // 구 버전이라 지원안됨
+                videoArea.srcObject=stream;
+                videoArea.play();
+            }
+
+            function onError() {
+                console.log("error");
+            }
+        </script>
+    </body>
+</html>
