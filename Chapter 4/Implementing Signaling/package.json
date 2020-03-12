@@ -3,8 +3,11 @@
 	"version": "0.0.1",
 	"private": true,
 	"dependencies": {
-		"express": "4.x",
-		"ejs": "2.x",
-		"express.io": "1.x"
+		"coffee-script": "^1.12.7",
+		"connect": "^3.7.0",
+		"ejs": "^2.7.4",
+		"express": "^4.17.1",
+		"express.io": "^1.1.13",
+		"serve-static": "^1.14.1"
 	}
 }
