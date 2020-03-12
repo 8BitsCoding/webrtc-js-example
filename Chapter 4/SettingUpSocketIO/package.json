@@ -5,6 +5,8 @@
 	"dependencies": {
 		"express": "4.x",
 		"ejs": "2.x",
-		"express.io": "1.x"
+		"express.io": "1.x",
+        "coffee-script": "~1.x",
+        "connect": "3.x"
 	}
 }
