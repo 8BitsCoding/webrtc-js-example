@@ -85,7 +85,10 @@
 				// once remote stream arrives, show it in the remote video element
 				rtcPeerConn.onaddstream = function (evt) {
 					displaySignalMessage("going to add their stream...");
-					theirVideoArea.src = URL.createObjectURL(evt.stream);
+					// theirVideoArea.src = URL.createObjectURL(evt.stream);
+					// 버전문제로 이렇게 써야함.
+					theirVideoArea.srcObject=evt.stream;
+					theirVideoArea.play();
 				};
 				
 				// get a local stream, show it in our video tag and add it to be sent
@@ -95,7 +98,10 @@
 					'video': true
 				}, function (stream) {
 					displaySignalMessage("going to display my stream...");
-					myVideoArea.src = URL.createObjectURL(stream);
+					// myVideoArea.src = URL.createObjectURL(stream);
+					// 버전문제로 이렇게 써야함.
+					myVideoArea.srcObject=stream;
+					myVideoArea.play();
 					rtcPeerConn.addStream(stream);
 				}, logError);
 			  
